@@ -31,9 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = environ.get('DEBUG') == 'True'
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -90,11 +90,6 @@ DATABASES = {
     }
 }
 
-PRODUCTION  = environ.get('PRODUCTION')
-# PRODUCTION = 'False'
-
-if PRODUCTION == 'True':
-    DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation

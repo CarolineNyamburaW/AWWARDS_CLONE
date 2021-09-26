@@ -13,11 +13,11 @@ def gallery(request):
 
   categories = Category.objects.all()
   context = {'categories': categories, 'photos': photos}
-  return render(request, 'photos/gallery.html', context)
+  return render(request, 'awwwardzapp/gallery.html', context)
 
 def viewPhoto(request, cn):
   photo = Photo.objects.get(id=cn)
-  return render(request, 'photos/photos.html', {'photo':photo})
+  return render(request, 'awwwardzapp/photos.html', {'photo':photo})
 
 def addPhoto(request):
   categories = Category.objects.all()
@@ -43,4 +43,4 @@ def addPhoto(request):
 
   photo = Photo.objects.all()
   context = {'categories': categories, 'photo': photo}
-  return render(request, 'photos/add.html', context)
+  return render(request, 'awwwardzapp/add.html', context)

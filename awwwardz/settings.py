@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 from os import environ
 from pathlib import Path
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+ 
 import dj_database_url
 
 from decouple import config
@@ -24,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&$4^8ald_*mf^3$7w34+kcsvj+e_8pmg$ss0ssz5m#%hnpa(%&'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = environ.get('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,6 +90,12 @@ DATABASES = {
     }
 }
 
+PRODUCTION  = environ.get('PRODUCTION')
+# PRODUCTION = 'False'
+
+if PRODUCTION == 'True':
+    DATABASES['default'] = dj_database_url.config()
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -135,6 +145,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT =BASE_DIR / 'static/images'
 STATIC_ROOT =BASE_DIR / 'staticfiles'
+
+cloudinary.config( 
+  cloud_name = config('cloud_name'), 
+  api_key = config('api_key'), 
+  api_secret = config('api_secret'),
+
+)
 
 
 # Default primary key field type

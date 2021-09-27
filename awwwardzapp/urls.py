@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns =[
-  path('', views.gallery, name='gallery'),
-  path('photo/<str:cn>/', views.viewPhoto, name='photo'),
-  path('add/', views.addPhoto, name='add'),
+  path('', views.home, name='home'),
+  path('project/<str:cn>/', views.viewProject, name='project'),
+  path('add/', views.addProject, name='add'),
 ]

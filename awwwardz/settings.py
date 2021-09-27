@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'awwwardzapp.apps.AwwwardzappConfig',
+    'register.apps.RegisterConfig',
 ]
 
 MIDDLEWARE = [

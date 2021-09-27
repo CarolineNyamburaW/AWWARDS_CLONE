@@ -18,7 +18,7 @@
 body{
    background: linear-gradient(
              0deg
-             ,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url("https://i.pinimg.com/originals/7f/22/bd/7f22bd1107b49b5eac20ce21b80d6489.jpg"); 
+             ,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url("https://www.rushdah-ir.com/wp-content/uploads/2018/03/sliders1-1.jpg"); 
      min-height: 100vh;
      background-position: center;
      background-repeat: no-repeat;
@@ -29,25 +29,25 @@ body{
 }
 
 
-.col-md-7{
+.col-md-4{
   margin-top: 5vh; 
 }
 
-.col-md-7 h2{
-  color:#CF792C ;
+.col-md-4 h2{
+  color:#49c5b6 ;
   font-size: 6vh;
   text-align: center;
 }
-.col-md-7 p{
+.col-md-4 p{
   font-style: italic;
   text-align: center;
   font-size: 4vh;
 }
 img{
-  max-width: 100%;
+  max-width: 105%;
   min-width: 100%;
   position: relative;
-  box-shadow: #cf7927 1px 0px 26px 12px;
+  box-shadow: #49c5b6 1px 0px 10px 10px;
 }
 
 
@@ -58,17 +58,18 @@ img{
 <body class="m-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-5">
+      <div class="col-md-8">
         <img class="img" style="min-height: 100%; max-height: 100%;"  src="{{photo.image.url}}" >
       </div>
 
-      <div class="col-md-7">
+      <div class="col-md-4">
 
-          <h2>About Image</h2>
+          <h2>About Project</h2>
 
           <p class="m-4">{{photo.description}}</p>
           <div class="d-flex justify-content-center">
-          <a href="{% url 'gallery' %}" class="btn btn-light" style="background-color: #cf7927; color: #c5c5c5;">Go Back</a>
+          <a href="https://galleryvilla4.herokuapp.com/" class="btn btn-light" style="background-color: #49c5b6; color: #000; margin-right: 2vw;">Website URL</a>
+          <a href="{% url 'home' %}" class="btn btn-light" style="background-color: #49c5b6; color: #000;">Go Back</a>
           </div>
       </div>
 

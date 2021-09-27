@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+  <title>AWWWARDZ</title>
 
   <!-- CSS link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,16 +91,16 @@
   margin-left: 50px;
 }
 
-.openbtn {
+.btn {
   font-size: 20px;
   cursor: pointer;
   background-color: transparent;
   color: #000;
-  padding: 10px 15px;
+  padding: 20px 15px;
   border: none;
 }
 
-.openbtn:hover {
+.btn:hover {
   color: #444;
 }
 
@@ -137,11 +137,6 @@ button {
 </style>
 
 <body class="">
-
-  
-
-
-
 
     <div id="main">
       
@@ -183,8 +178,9 @@ button {
             <span class="navbar-toggler-icon-white"></span>
           </button>
 
-          <button class="openbtn"  style=" height: 70px;"> REGISTER / LOG IN </button> 
-          <button class="openbtn"  style="background-color: #49c5b6; height: 70px;"> SUBMIT YOUR SITE! </button> 
+          <a href="{% url 'add' %}" class="btn btn-light" style="background-color: #fff; height: 70px; color: #000;">REGISTER / LOG IN </a>
+          <a href="{% url 'add' %}" class="btn btn-light" style="background-color: #49c5b6; height: 70px; color: #000;">SUBMIT YOUR SITE!</a>
+
 
 
 
@@ -207,10 +203,8 @@ button {
           <div class="col-md-3"  style="font-family: 'Rancho', cursive; color: #cf7927; font-size: 4vh;">
               <div class="card my-2" style="background-color: #d8d3d3;">
                 <img class="image-thumbnail" src="{{photo.image.url}}" alt="Card image cap">
-                <div class="card-body">
-                  <small>Category: {{photo.category.name}}</small>
-                </div>
-                <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1" style="background-color: #cf7927">View Description</a>
+                <a href="{% url 'project' photo.id %}" class="btn btn-outline-dark btn-sm m-1" style="background-color: #49c5b6; padding: 5px 15px;
+                ">View Project Description</a>
               </div>
           </div>
           {% empty %}

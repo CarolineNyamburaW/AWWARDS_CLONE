@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'awwwardzapp.apps.AwwwardzappConfig',
     'register.apps.RegisterConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -91,6 +92,11 @@ DATABASES = {
     }
 }
 
+PRODUCTION  = environ.get('PRODUCTION')
+# PRODUCTION = 'False'
+
+if PRODUCTION == 'True':
+    DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
@@ -133,6 +139,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
+CRISPY_TEMPLATE_PACK="bootstrap"
+
 STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
@@ -149,6 +157,8 @@ cloudinary.config(
 
 )
 
+LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -58,21 +58,23 @@ img{
 <body class="m-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8">
-        <img class="img" style="min-height: 100%; max-height: 100%;"  src="{{photo.image.url}}" >
-      </div>
 
-      <div class="col-md-4">
-
-          <h2>About Project</h2>
-
-          <p class="m-4">{{photo.description}}</p>
-          <div class="d-flex justify-content-center">
-          <a href="https://galleryvilla4.herokuapp.com/" class="btn btn-light" style="background-color: #49c5b6; color: #000; margin-right: 2vw;">Website URL</a>
-          <a href="{% url 'home' %}" class="btn btn-light" style="background-color: #49c5b6; color: #000;">Go Back</a>
+    {% if user.is_authenticated%}  
+          <div class="col-md-8">
+            <img class="img" style="min-height: 100%; max-height: 100%;"  src="{{photo.image.url}}" >
           </div>
-      </div>
 
+          <div class="col-md-4">
+              <h2>About Project</h2>
+              <p class="m-4">{{photo.description}}</p>
+              <div class="d-flex justify-content-center">
+              <a href="https://galleryvilla4.herokuapp.com/" class="btn btn-light" style="background-color: #49c5b6; color: #000; margin-right: 2vw;">Website URL</a>
+              <a href="{% url 'home' %}" class="btn btn-light" style="background-color: #49c5b6; color: #000;">Go Back</a>
+              </div>
+          </div>
+      {% else %} 
+          <p>Login <a href="{% url 'login' %}">Here!</a> </p> 
+    {% endif %}
 
     </div>
 

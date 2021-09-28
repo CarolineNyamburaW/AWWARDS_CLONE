@@ -178,7 +178,7 @@ button {
             <span class="navbar-toggler-icon-white"></span>
           </button>
 
-          <a href="{% url 'add' %}" class="btn btn-light" style="background-color: #fff; height: 70px; color: #000;">REGISTER / LOG IN </a>
+          <a href="{% url 'register' %}" class="btn btn-light" style="background-color: #fff; height: 70px; color: #000;">REGISTER / LOG IN </a>
           <a href="{% url 'add' %}" class="btn btn-light" style="background-color: #49c5b6; height: 70px; color: #000;">SUBMIT YOUR SITE!</a>
 
 
@@ -198,7 +198,7 @@ button {
       <div class="col-md-12">
 
         <div class="row">
-       
+      
           {% for photo in photos %}
           <div class="col-md-3"  style="font-family: 'Rancho', cursive; color: #cf7927; font-size: 4vh;">
               <div class="card my-2" style="background-color: #d8d3d3;">
@@ -210,6 +210,7 @@ button {
           {% empty %}
           <h1>No Photos Found</h1>
           {% endfor %}
+
 
         </div>
         

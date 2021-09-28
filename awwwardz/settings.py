@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
     'awwwardzapp.apps.AwwwardzappConfig',
     'register.apps.RegisterConfig',
-    'cloudinary'
+    'cloudinary',
     'crispy_forms',
 ]
 

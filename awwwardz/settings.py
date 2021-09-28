@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'awwwardzapp.apps.AwwwardzappConfig',
     'register.apps.RegisterConfig',
+    'cloudinary'
     'crispy_forms',
 ]
 
@@ -154,7 +155,6 @@ cloudinary.config(
   cloud_name = config('cloud_name'), 
   api_key = config('api_key'), 
   api_secret = config('api_secret'),
-
 )
 
 LOGIN_REDIRECT_URL = "/"

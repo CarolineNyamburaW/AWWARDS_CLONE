@@ -1,1 +1,1 @@
-web: gunicorn awwwardzapp.wsgi
+web: gunicorn awwwardz.wsgi

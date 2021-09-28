@@ -24,17 +24,3 @@ def addProject(request):
 
   return render(request, 'awwwardzapp/add.html', )
 
-
-def post(request):
-    if request.method == 'POST':
-        title = request.POST['title']
-        image = request.FILES['screen']
-        description = request.POST['description']
-        link = request.POST['link']
-        post = Site(title=title, image=image, description=description, link=link)
-        post.save()
-        messages.add_message(request, messages.SUCCESS, "post created successfully")
-        return redirect('home')
-    post = Site.objects.all()
-    context = {'posts': post}
-    return render(request, 'awwwardzapp/project.html', context)
